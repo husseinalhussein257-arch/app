@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: uniquest-backend
+
+  profiles:
+    active: dev   # remove or set to 'prod' before deploying
+
+  data:
+    mongodb:
+      uri: mongodb+srv://ha26705_db_user:Z9whGcXWRdykWw9z@cluster0.o90keko.mongodb.net/uniquest?retryWrites=true&w=majority&appName=Cluster0
+
+      # For production, use environment variable:
+      # uri: ${MONGODB_URI}
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+# JWT configuration
+app:
+  jwt:
+    secret: ${JWT_SECRET:uniquest-super-secret-key-change-in-production-min-256-bits}
+    expiration-ms: 86400000   # 24 hours
+
+  quiz:
+    default-question-limit: 20   # questions per attempt

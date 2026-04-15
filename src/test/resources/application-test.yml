@@ -1,0 +1,12 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://ha26705_db_user:Z9whGcXWRdykWw9z@cluster0.o90keko.mongodb.net/uniquest?retryWrites=true&w=majority&appName=Cluster0
+# overridden by mocks in unit tests
+
+app:
+  jwt:
+    secret: test-secret-key-minimum-32-chars-for-hs256-algorithm
+    expiration-ms: 3600000
+  quiz:
+    default-question-limit: 5
